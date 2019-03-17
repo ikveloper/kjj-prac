@@ -9,9 +9,9 @@ let params = {
     locationId: 1700272,  // Same as kijiji.locations.ONTARIO.GTA
     categoryId: 760,  
     sortByName: "priceAsc",  // Show the cheapest listings first
-    keywords: 'iphone',
-    maxPrice: 1000,
-    minPrice: 400
+    keywords: 'macbook',
+    maxPrice: 2000,
+    minPrice: 500
 };
  
 // Scrape using returned promise
@@ -20,14 +20,11 @@ kijiji.search(params, options).then(function(ads) {
     const arr =[];
     for (let i = 0; i < ads.length; ++i) {
         //console.log('----------------------------------');
-        //console.log(ads[i].title);
+        console.log(ads[i].title);
         //console.log(ads[i].image);
         //console.log(ads[i].attributes.price);
-        arr.push(ads[i]);
 
     }
-    arr.forEach(elem) 
-        console.log(elem.attributes.price);
     
 }).catch(console.error);
  
